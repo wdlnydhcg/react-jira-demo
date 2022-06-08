@@ -18,6 +18,9 @@
   },
   "scripts": {
     "dev": "npm run start",
+    "mockClick": "cross-env npm run dev --mode mock",
+    "mockServer": "nodemon --watch mock --exec 'json-server --watch mock/index.js --port 7788 --snapshots ./mock --routes ./mock/json-server-route.json'",
+    "dev:mock": "concurrently \"npm run mockServer\" \"npm run mockClick\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,10 +49,15 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
+    "@faker-js/faker": "^6.3.1",
+    "concurrently": "^7.2.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
+    "json-server": "^0.17.0",
     "lint-staged": "^12.4.1",
+    "nodemon": "^2.0.16",
     "prettier": "2.6.2",
     "prettier-eslint": "^15.0.1"
   },
