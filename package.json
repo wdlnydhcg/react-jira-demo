@@ -21,7 +21,7 @@
     "mockClick": "cross-env npm run dev --mode mock",
     "mockServer": "nodemon --watch mock --exec 'json-server --watch mock/index.js --port 7788 --snapshots ./mock --routes ./mock/json-server-route.json'",
     "dev:mock": "concurrently \"npm run mockServer\" \"npm run mockClick\"",
-    "start": "react-scripts start",
+    "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
